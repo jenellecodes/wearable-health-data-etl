@@ -1,13 +1,19 @@
 # File contains stattisical functions
 
+import statistics as stats
+
 def average(data: list) -> float:
+
+    avg= stats.mean(data)
+    return round(avg)
+
     
-    clean_data=data
-    total_hr = 0
-    for i in clean_data:
-        total_hr = total_hr + i
-    avg_hr =total_hr/len(clean_data)   
-    return round(avg_hr,2)
+    # clean_data=data
+    # total_hr = 0
+    # for i in clean_data:
+    #     total_hr = total_hr + i
+    # avg_hr =total_hr/len(clean_data)   
+    # return round(avg_hr,2)
 
 def median(data: list) -> float:
     
