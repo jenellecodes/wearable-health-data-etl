@@ -30,3 +30,12 @@ def range(data: list) -> float:
     
     sorted_list= sorted(data)
     return sorted_list [-1] - sorted_list[0]
+
+
+def variance(data:list) -> float: 
+    var = stats.variance(data)
+    return round(var)
+
+def stdev(data:list)->float:
+    std = variance(data) ** 0.5
+    return round(std)

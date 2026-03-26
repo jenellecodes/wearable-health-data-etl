@@ -2,7 +2,8 @@ from data_cleaning import clean_heartrate_data
 from statistical import average
 from statistical import median
 from statistical import range
-
+from statistical import variance
+from statistical import stdev
 # def clean_heartrate_data(data: list) -> tuple:
 #     cleaned_hr_data = []
 #     num_rows_removed =0
@@ -95,6 +96,8 @@ def run(file: str):
     average_hr = average(new_data)
     median_hr= median(new_data)
     range_hr = range (new_data)
+    variance_hr = variance(new_data)
+    stddev_hr = stdev(new_data)
     #rolling_avg_hr = rolling_avg(clean_hr_data)
 
     #print out your data quality measure to the console
@@ -106,7 +109,8 @@ def run(file: str):
     print(f"Median Heart-Rate {median_hr}")
     print(f"Range Heart-Rate {range_hr}")
     #print(f"Average Heart-Rate{rolling_avg_hr} + {int = 10}")
-
+    print(f"Variance Heart-Rate {variance_hr}" )
+    print(f"Standard Deviation Heart-Rate {stddev_hr}")
 if __name__ == "__main__":
     run("data/phase0.txt")
     run("data/phase1.txt")
