@@ -4,6 +4,9 @@ from statistical import median
 from statistical import range
 from statistical import variance
 from statistical import stdev
+import matplotlib.pyplot as plt
+import uuid
+
 # def clean_heartrate_data(data: list) -> tuple:
 #     cleaned_hr_data = []
 #     num_rows_removed =0
@@ -76,6 +79,10 @@ def run(file: str):
     Returns:
         float, float, float: You will return the average, median, and range.
     """
+
+    # Generate unique uuid for different line plot visualizations
+    random_uuid = uuid.uuid4()
+
     data = []
     cleaned_data = []
     # open file using file I/O and read it into the `data` list
@@ -91,6 +98,12 @@ def run(file: str):
      cleaned_data.append(item.replace('\n', ''))
 
     new_data = clean_heartrate_data(cleaned_data)
+
+    plt.plot(new_data)
+    plt.savefig(f"./images/{random_uuid}:line_plot.jpg")
+    plt.close()
+
+
    
     #calculate the average, median, and range of this file using the functions you've wrote
     average_hr = average(new_data)
